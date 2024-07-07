@@ -1,0 +1,32 @@
+local function getHWID()
+    return "19EE3B3F-27D6-424E-8757-CEEAECBD3A0A"
+end
+
+local hwidWhitelist = {
+"19EE3B3F-27D6-424E-8757-CEEAECBD3A0A", ----- SwornRare
+"4FE1DA5C-AC95-4526-A444-4E17FED65011", ----- th
+"361B3AAE-0E1F-49D2-9E35-8CC2E5FB0749",---- gelatina
+"CE01C146-38CE-4B5F-931C-7FB6F79B54B0", ---- mateus
+"5DB44291-8B91-409C-B72F-C97C884BC0B3", ---- XD
+}
+
+
+local function isHWIDWhitelisted(hwid)
+    for _, whitelistedHWID in ipairs(hwidWhitelist) do
+        if hwid == whitelistedHWID then
+            return true
+        end
+    end
+    return false
+end
+
+
+local userHWID = getHWID()
+
+
+if isHWIDWhitelisted(userHWID) then
+    print("Acesso concedido ao usuário com HWID: " .. userHWID)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bxbyrare/7MSCRIPTT/main/7m"))()
+else
+    print("Acesso negado ao usuário com HWID: " .. userHWID)
+end
