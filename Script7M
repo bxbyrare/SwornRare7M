@@ -26,7 +26,7 @@ local userHWID = getHWID()
 
 if isHWIDWhitelisted(userHWID) then
     print("Acesso concedido ao usuário com HWID: " .. userHWID)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/bxbyrare/7MSCRIPTT/main/7m"))()
+    loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/bxbyrare/7MSCRIPTT/main/7m"))()"))()
 else
     print("Acesso negado ao usuário com HWID: " .. userHWID)
 end
